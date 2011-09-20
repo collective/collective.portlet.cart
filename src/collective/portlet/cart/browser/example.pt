@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+    
+      <div>
+        <span class="cart_item_uid" style="display: none;">12345678</span>
+        <h3>Artikel 12345678</h3>
+        <input type="text" size="2" value="1" class="cart_item_count" />Stück
+        <a href="" class="add_cart_item">in den Warenkorb</a>
+        <a href="" class="update_cart_item">Warenkorb &auml;ndern</a>
+      </div>
+      
+      <hr size="1" />
+      
+      <div>
+        <span class="cart_item_uid" style="display: none;">12345679</span>
+        <h3>Artikel 12345679</h3>
+        <input type="text" size="2" value="1" class="cart_item_count" />Stück
+        <a href="" class="add_cart_item">in den Warenkorb</a>
+      </div>
+      
+      <hr size="1" />
+      
+      <div>
+        <span class="cart_item_uid" style="display: none;">12345680</span>
+        <h3>Artikel 12345680</h3>
+        <input type="text" size="2" value="1" class="cart_item_count" />Stück
+        <a href="" class="add_cart_item">in den Warenkorb</a>
+      </div>
+      
+      <hr size="1" />
+      
+      <div>
+        <span class="cart_item_uid" style="display: none;">12345681</span>
+        <h3>Artikel 12345681</h3>
+        <input type="text" size="2" value="1" class="cart_item_count" />Stück
+        <a href="" class="add_cart_item">in den Warenkorb</a>
+      </div>
+      
+      <hr size="1" />
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>
+

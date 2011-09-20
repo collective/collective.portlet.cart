@@ -1,0 +1,36 @@
+<tal:block i18n:domain="plone">
+<div id="cartWrapper">
+  <span tal:condition="view/disable_max_article_count"
+        style="display:none;"
+        class="disable_max_article_count">&nbsp;</span>
+  
+  <dl class="portlet portletCart"
+      id="portlet-cart" style="display:none;">
+      <dt class="portletHeader">
+          <span class="portletTopLeft"></span>
+          <a href="@@cart" 
+             class="tile"
+             title="Zum Warenkorb"
+             tal:condition="not:view/disable_max_article_count">Warenkorb</a>
+          <span tal:condition="view/disable_max_article_count">Warenkorb</span>
+          <span class="portletTopRight"></span>
+      </dt>
+	  <dd class="cart-button-cart"
+	      tal:condition="not:view/disable_max_article_count">
+	    <a href="@@cart">&raquo; Zum Warenkorb</a>
+	  </dd>
+      <dd class="portletItem lastItem">
+          <tal:cart replace="structure context/@@carttemplate" />
+          <span class="portletBottomLeft"></span>
+          <span class="portletBottomRight"></span>
+      </dd>
+      <dd class="cart-button-cart"
+          tal:condition="not:view/disable_max_article_count">
+        <a href="@@cart">&raquo; Zum Warenkorb</a>
+      </dd>
+  </dl>
+  
+  <div class="clearFix">
+  </div>
+  
+</tal:block>
