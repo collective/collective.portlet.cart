@@ -2,9 +2,6 @@
 <metadata>
   <version>1.0</version>
   <dependencies>
-  	<dependency>profile-cornerstone.soup:default</dependency>
-    <dependency>profile-cornerstone.ui.result:default</dependency>
-    <dependency>profile-Products.izBroschueren:default</dependency>
 	<dependency>profile-bda.plone.ajax:default</dependency>
   </dependencies> 
 </metadata>
