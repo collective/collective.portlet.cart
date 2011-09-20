@@ -152,8 +152,10 @@ class Calculator(ItemInfo):
         """
         brain = self.itembrain(item)
         count = item[1]
-        netto = float(brain.getPreis)
-        ust = netto * (float(brain.getUst) * 0.01)
+#        netto = float(brain.getPreis)
+        netto = 128
+#        ust = netto * (float(brain.getUst) * 0.01)
+        ust = 3.5
         return (netto * count, ust * count)
 
 class Orders(object):

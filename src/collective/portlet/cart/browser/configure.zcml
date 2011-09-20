@@ -11,9 +11,20 @@
   />
 
   <browser:resource
-    name="bda.cart.js"
-    file="bda.cart.js"
+    name="collective.portlet.cart.js"
+    file="collective.portlet.cart.js"
   />
+
+  <browser:resource
+    name="collective.portlet.cart.css"
+    file="collective.portlet.cart.css"
+  />
+
+  <browser:resource
+    name="collective.portlet.cart.kss"
+    file="collective.portlet.cart.kss"
+  />
+
   
   <browser:resource
     name="cart_item_refresh.gif"
@@ -62,7 +73,7 @@
     permission="zope2.View"
   />
   
-  <!-- XXX move this out when generalizing ``bda.cart`` -->
+  <!-- XXX move this out when generalizing ``collective.portlet.cart`` -->
   <adapter factory=".cart.CartDataProvider" />
 
 </configure>

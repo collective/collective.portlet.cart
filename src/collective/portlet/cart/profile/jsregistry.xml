@@ -7,7 +7,7 @@
    cookable="True"
    enabled="True"
    expression=""
-   id="++resource++bda.cart.js"
+   id="++resource++collective.portlet.cart.js"
    inline="False"
  />
  

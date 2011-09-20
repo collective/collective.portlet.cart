@@ -3,16 +3,16 @@ from zope.interface import Interface, Attribute, implements
 from zope.component import adapts, getMultiAdapter
 from zope.publisher.interfaces.browser import IBrowserRequest
 from Products.Five import BrowserView
-from bda.broschuerenshop.common import extractitems, Calculator, ItemInfo
+from collective.portlet.cart.common import extractitems, Calculator, ItemInfo
 
 class ICartDataProvider(Interface):
     
     data = Attribute(u"Cart data as json response")
 
 class CartDataProvider(object):
-    """Broschuerenshop cart item provider.
+    """collective.portlet.cart item provider.
     
-    XXX: abstract this when generalizing cart to ``bda.cart``
+    XXX: abstract this when generalizing cart to ``collective.portlet.cart``
     """
     
     implements(ICartDataProvider)

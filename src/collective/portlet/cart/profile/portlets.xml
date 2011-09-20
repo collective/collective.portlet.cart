@@ -10,13 +10,6 @@
    <for interface="plone.app.portlets.interfaces.IRightColumn" />
  </portlet>
  
- <portlet 
-   addview="portlets.Shop"
-   title="Shop portlet"
-   description="A portlet which links to the shop tools.">
-   <for interface="plone.app.portlets.interfaces.IRightColumn" />
- </portlet>
- 
  <assignment
    manager="plone.rightcolumn"
    category="context"
@@ -25,12 +18,4 @@
    name="cart"
  />
  
- <assignment
-   manager="plone.rightcolumn"
-   category="context"
-   key="/"
-   type="portlets.Shop"
-   name="shop"
- />
-
 </portlets>

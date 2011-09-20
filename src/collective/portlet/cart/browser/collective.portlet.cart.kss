@@ -1,0 +1,6 @@
+#cornerstone_result_bda_broschuerenshop_manualorderselection:load,
+#cornerstone_result_bda_broschuerenshop_ordersresult:load,
+#cornerstone_result_bda_broschuerenshop_watchorderresult:load,
+#cornerstone_result_bda_broschuerenshop_searchresult:load {
+    action-client: rebindShopEvents;
+}
