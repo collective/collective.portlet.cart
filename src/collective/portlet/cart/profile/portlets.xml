@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<portlets
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone">
+
+ <portlet 
+   addview="portlets.Cart"
+   title="Cart portlet"
+   description="A portlet which renders a shopping cart.">
+   <for interface="plone.app.portlets.interfaces.IRightColumn" />
+ </portlet>
+ 
+ <portlet 
+   addview="portlets.Shop"
+   title="Shop portlet"
+   description="A portlet which links to the shop tools.">
+   <for interface="plone.app.portlets.interfaces.IRightColumn" />
+ </portlet>
+ 
+ <assignment
+   manager="plone.rightcolumn"
+   category="context"
+   key="/"
+   type="portlets.Cart"
+   name="cart"
+ />
+ 
+ <assignment
+   manager="plone.rightcolumn"
+   category="context"
+   key="/"
+   type="portlets.Shop"
+   name="shop"
+ />
+
+</portlets>
