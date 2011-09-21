@@ -24,8 +24,8 @@ Implement data provider inheriting from
 ``collective.portlets.cart.CartDataProviderBase``,
 
 ::
-    >>> from collective.portlet.cart import CartDataProviderBase
 
+    >>> from collective.portlet.cart import CartDataProviderBase
     >>> class AppCartDataProvider(CartDataProviderBase):
     ...     """Also look at ``collective.portlets.cart.example`` source code.
     ...     """
@@ -80,22 +80,26 @@ Basically a shop item consists of a container DOM element, containing an
 element with CSS class ``cart_item_uid``, where the item UID is taken from,
 
 ::
+
     <span class="cart_item_uid" style="display: none;">12345678</span>
 
 a text input field with CSS class ``cart_item_count`` which is read for
 item count,
 
 ::
+
     <input type="text" size="2" value="1" class="cart_item_count" />Stück
 
 the "add to Cart" action,
 
 ::
+
     <a href="" class="add_cart_item">add to cart</a>
 
 and the "update cart" avtion.
 
 ::
+
     <a href="" class="update_cart_item">update cart</a>
 
 
