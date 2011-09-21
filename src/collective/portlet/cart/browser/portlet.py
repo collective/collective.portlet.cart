@@ -5,7 +5,9 @@ from plone.portlets.interfaces import IPortletDataProvider
 from Products.CMFPlone import PloneMessageFactory as _
 from plone.memoize import instance
 
+
 class ICartPortlet(IPortletDataProvider): pass
+
 
 class CartAssignment(base.Assignment):
     implements(ICartPortlet)
@@ -13,6 +15,7 @@ class CartAssignment(base.Assignment):
     @property
     def title(self):
         return _(u"Cart")
+
 
 class CartRenderer(base.Renderer):
     
@@ -38,6 +41,7 @@ class CartRenderer(base.Renderer):
     def disable_max_article_count(self):
         member = self.context.portal_membership.getAuthenticatedMember()
         return not member.has_role('Anonymous')
+
 
 class CartAddForm(base.NullAddForm):
     label = _(u"Add Cart Portlet")

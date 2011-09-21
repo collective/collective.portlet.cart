@@ -19,12 +19,6 @@
     name="collective.portlet.cart.css"
     file="collective.portlet.cart.css"
   />
-
-  <browser:resource
-    name="collective.portlet.cart.kss"
-    file="collective.portlet.cart.kss"
-  />
-
   
   <browser:resource
     name="cart_item_refresh.gif"
