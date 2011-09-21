@@ -1,9 +1,4 @@
-/*
- * File: bda.cart.js
- * Version: 1.0
- * Author: BlueDynamics Alliance
- * Dependencies: $, cookie_functions.js
- */
+// Dependencies: $, cookie_functions.js
 
 (function($) {
 
@@ -20,6 +15,14 @@
     var CART_MAX_ARTICLE_COUNT = 5;
     
     function Cart() {}
+    
+    Cart.prototype.messages = {
+        article_limit_reached: "Die gewünschte Bestellmenge übersteigt die " +
+              "maximale Bestellmenge für diesen Artikel.",
+        total_limit_reached: "Die gewünschte Bestellmenge übersteigt die " +
+              "maximale Gesamtbestellmenge.",
+        not_a_number: "Die Eingabe muss eine Ganzzahl sein"
+    }
     
     Cart.prototype.init = function() {
         this.cart_node = $('#cart').get(0);
@@ -91,7 +94,7 @@
             $('#cart_no_items', this.cart_node).css('display', 'block');
             $('#cart_summary', this.cart_node).css('display', 'none');
         } else {
-        	$(CART_CONTAINER_IDENTIFYER).css('display', 'block');
+            $(CART_CONTAINER_IDENTIFYER).css('display', 'block');
             $('#cart_no_items', this.cart_node).css('display', 'none');
             $('#cart_items', this.cart_node).empty();
             $('#cart_items', this.cart_node).css('display', 'block');
@@ -120,10 +123,10 @@
                                 // no count placeholder
                                 $(this).html(value);
                             } else {
-                                // if count placeholder in template
-                                // has 'style' attribute 'display' set to 'none',
-                                // do not change the value. This is necessary
-                                // items removal from cart.
+                                // if count placeholder in template has 'style'
+                                // attribute 'display' set to 'none', do not
+                                // change the value. This is necessary items
+                                // removal from cart.
                                 var mode = $(this).css('display');
                                 if (mode == 'inline') {
                                     $(this).html(value);
@@ -166,9 +169,8 @@
                         type: 'json',
                         success: function(data) {
                             if (data == false) {
-                                var msg = "Die gewünschte Bestellmenge ";
-                                msg += "übersteigt die maximale Bestellmenge ";
-                                msg += "für diesen Artikel.";
+                                var msg;
+                                msg = cart.messages['article_limit_reached'];
                                 bdajax.info(unescape(msg));
                             } else {
                                 cart.add(defs[0], defs[1]);
@@ -191,9 +193,8 @@
                         type: 'json',
                         success: function(data) {
                             if (data == false) {
-                                var msg = "Die gewünschte Bestellmenge übersteigt ";
-                                msg += "die Anzahl der erlaubten Bestellmenge für ";
-                                msg += "diesen Artikel.";
+                                var msg;
+                                msg = cart.messages['article_limit_reached'];
                                 bdajax.info(unescape(msg));
                             } else {
                                 cart.set(defs[0], defs[1]);
@@ -221,7 +222,7 @@
     
     Cart.prototype.validateInt = function(count) {
         if (isNaN(parseInt(count))) {
-            bdajax.info('Die Eingabe muss eine Ganzzahl sein');
+            bdajax.info(cart.messages['not_a_number']);
             return false;
         }
         return true;
@@ -257,12 +258,8 @@
         }
         count += parseInt(addcount);
         if (count > CART_MAX_ARTICLE_COUNT) {
-            var msg = "Die gewünschte Bestellmenge übersteigt die maximale ";
-            msg += "Gesamtbestellmenge. \n\n Bitte beachten Sie, dass nur ";
-            msg += "f%FCnf verschiedene Brosch%FCren bestellt werden k%F6nnen. ";
-            msg += "Falls Sie mehr Exemplare ben%F6tigen, rufen Sie uns an unter ";
-            msg += "der Telefon-Nr. (0 30) 1663 1201/1202 oder senden ein Fax ";
-            msg += "(0 30) 1663 1298.";  
+            var msg;
+            msg = cart.messages['total_limit_reached'];
             bdajax.info(unescape(msg));
             return false;
         }
@@ -280,12 +277,8 @@
         }
         count += parseInt(setcount);
         if (count > CART_MAX_ARTICLE_COUNT) {
-            var msg = "Die gewünschte Bestellmenge übersteigt die maximale ";
-            msg += "Gesamtbestellmenge. \n\n Bitte beachten Sie, dass nur ";
-            msg += "f%FCnf verschiedene Brosch%FCren bestellt werden k%F6nnen. ";
-            msg += "Falls Sie mehr Exemplare ben%F6tigen, rufen Sie uns an unter ";
-            msg += "der Telefon-Nr. (0 30) 1663 1201/1202 oder senden ein Fax ";
-            msg += "(0 30) 1663 1298.";  
+            var msg;
+            msg = cart.messages['total_limit_reached']
             bdajax.info(unescape(msg));
             return false;
         }
@@ -293,7 +286,7 @@
     }
     
     Cart.prototype.query = function() {
-    	if (!this.cart_node) {
+        if (!this.cart_node) {
             return;
         }
         if (document.location.href.indexOf('/portal_factory/') != -1) {

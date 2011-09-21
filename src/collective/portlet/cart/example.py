@@ -39,3 +39,11 @@ class ExampleCartDataProvider(CartDataProviderBase):
     
     def validate_count(self, uid, count):
         return True
+    
+    @property
+    def disable_max_article(self):
+        return False
+    
+    @property
+    def show_summary(self):
+        return True

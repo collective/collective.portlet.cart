@@ -10,23 +10,22 @@ from plone.memoize import instance
 from collective.portlet.cart import ICartDataProvider
 
 
-class CartView(BrowserView):
-    """View for cart.
-    """
+class DataProviderMixin(object):
     
-    @property
-    def show_summary(self):
-        return True
-
-
-class CartDataView(BrowserView):
-    """JSON view for cart.
-    """
-
     @property
     def data_provider(self):
         return getMultiAdapter(
             (self.context, self.request), ICartDataProvider)
+
+
+class CartView(BrowserView, DataProviderMixin):
+    
+    @property
+    def show_summary(self):
+        return self.data_provider.show_summary
+
+
+class CartDataView(BrowserView, DataProviderMixin):
     
     def validateItemCount(self):
         uid = self.request.form.get('uid'),
@@ -49,8 +48,7 @@ class CartAssignment(base.Assignment):
         return _(u"Cart")
 
 
-class CartRenderer(base.Renderer):
-    
+class CartRenderer(base.Renderer, DataProviderMixin):
     template = ViewPageTemplateFile('portlet.pt')
 
     def update(self):
@@ -69,10 +67,8 @@ class CartRenderer(base.Renderer):
         return self.template()
     
     @property
-    @instance.memoize
     def disable_max_article_count(self):
-        member = self.context.portal_membership.getAuthenticatedMember()
-        return not member.has_role('Anonymous')
+        return self.data_provider.disable_max_article
 
 
 class CartAddForm(base.NullAddForm):

@@ -42,19 +42,37 @@ class ICartDataProvider(Interface):
     
     data = Attribute(u"Cart data as list of dicts.")
     
+    disable_max_article = Attribute(u"Flag whether to disable max article "
+                                    u"limit.")
+    
+    show_summary = Attribute(u"Flag whether to show cart summary.")
+    
     def validate_count(uid, count):
         """Validate if ordering n items of UID is allowed.
         """
 
 
 class CartDataProviderBase(object):
-    
     implements(ICartDataProvider)
     adapts(Interface, IBrowserRequest)
     
     def __init__(self, context, request):
         self.context = context
         self.request = request
+    
+    @property
+    def disable_max_article_count(self):
+        raise NotImplementedError(u"CartDataProviderBase does not implement "
+                                  u"``disable_max_article_count``.")
+    
+    @property
+    def show_summary(self):
+        raise NotImplementedError(u"CartDataProviderBase does not implement "
+                                  u"``show_summary``.")
+    
+    def validate_count(self, uid, count):
+        raise NotImplementedError(u"CartDataProviderBase does not implement "
+                                  u"``validate_count``.")
     
     def net(self, items):
         """Calculate net sum of cart items.
@@ -73,12 +91,6 @@ class CartDataProviderBase(object):
         """
         raise NotImplementedError(u"CartDataProviderBase does not implement "
                                   u"``cart_items``.")
-    
-    def validate_count(self, uid, count):
-        """Validate if ordering n items with uid is permitted.
-        """
-        raise NotImplementedError(u"CartDataProviderBase does not implement "
-                                  u"``validate_count``.")
     
     def item(self, uid, title, count, price, url):
         """
