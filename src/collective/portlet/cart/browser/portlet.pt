@@ -15,10 +15,10 @@
           <span tal:condition="view/disable_max_article_count">Warenkorb</span>
           <span class="portletTopRight"></span>
       </dt>
-	  <dd class="cart-button-cart"
-	      tal:condition="not:view/disable_max_article_count">
-	    <a href="@@cart">&raquo; Zum Warenkorb</a>
-	  </dd>
+      <dd class="cart-button-cart"
+          tal:condition="not:view/disable_max_article_count">
+        <a href="@@cart">&raquo; Zum Warenkorb</a>
+      </dd>
       <dd class="portletItem lastItem">
           <tal:cart replace="structure context/@@carttemplate" />
           <span class="portletBottomLeft"></span>

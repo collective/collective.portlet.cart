@@ -8,4 +8,7 @@
   
   <include package=".browser" />
   
+  <!-- example cart data provider -->
+  <adapter factory=".example.ExampleCartDataProvider" />
+  
 </configure>
