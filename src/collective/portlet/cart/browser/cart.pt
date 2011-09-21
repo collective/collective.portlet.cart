@@ -46,19 +46,14 @@
     </li>
   </ul>
   
-  <!--
-  <div class="shop-trennlinie">&nbsp;</div>
-  -->
-   
   <div id="cart_summary" style="display: none;">
-    <!--
-    <p>
-      <span>Netto: </span><span class="cart_netto">Netto</span><br />
-      <span>USt.: </span><span class="cart_ust">Ust</span><br />
-      <strong>Summe: </strong><span class="cart_total">Total</span>
-    </p> 
-    <div class="shop-trennlinie">&nbsp;</div>
-    -->
+    <div tal:condition="view/show_summary">
+      <p>
+        <span>Net: </span><span class="cart_net">Net</span><br />
+        <span>VAT.: </span><span class="cart_vat">VAT</span><br />
+        <strong>Total: </strong><span class="cart_total">Total</span>
+      </p> 
+    </div>
   </div>
   
 </div>

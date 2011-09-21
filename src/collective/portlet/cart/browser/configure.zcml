@@ -4,10 +4,10 @@
   
   <plone:portlet
     name="portlets.Cart"
-    interface=".portlet.ICartPortlet"
-    assignment=".portlet.CartAssignment"
-    renderer=".portlet.CartRenderer"
-    addview=".portlet.CartAddForm"
+    interface=".ICartPortlet"
+    assignment=".CartAssignment"
+    renderer=".CartRenderer"
+    addview=".CartAddForm"
   />
 
   <browser:resource
@@ -33,7 +33,7 @@
   <browser:page
     for="*"
     name="cartData"
-    class=".cart.CartDataView"
+    class=".CartDataView"
     attribute="cartData"
     permission="zope2.View"
   />
@@ -41,7 +41,7 @@
   <browser:page
     for="*"
     name="validateItemCount"
-    class=".cart.CartDataView"
+    class=".CartDataView"
     attribute="validateItemCount"
     permission="zope2.View"
   />
@@ -49,6 +49,7 @@
   <browser:page
     for="*"
     name="carttemplate"
+    class=".CartView"
     template="cart.pt"
     permission="zope2.View"
   />
