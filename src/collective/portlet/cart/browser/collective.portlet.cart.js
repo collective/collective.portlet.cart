@@ -87,7 +87,7 @@
             if (!CART_HIDE_CONTAINER_IF_EMPTY) {
                 $(CART_CONTAINER_IDENTIFYER).css('display', 'block');
             }
-            $('#cart_items', this.cart_node).css('display', 'block');
+            $('#cart_items', this.cart_node).css('display', 'none');
             $('#cart_no_items', this.cart_node).css('display', 'block');
             $('#cart_summary', this.cart_node).css('display', 'none');
         } else {
