@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.1'
+version = '0.9'
 shortdesc = 'collective.portlet.cart'
-longdesc = ""
+longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
 setup(name='collective.portlet.cart',
       version=version,
