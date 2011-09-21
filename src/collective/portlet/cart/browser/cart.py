@@ -5,14 +5,14 @@ from zope.publisher.interfaces.browser import IBrowserRequest
 from Products.Five import BrowserView
 from collective.portlet.cart.common import extractitems, Calculator, ItemInfo
 
+
 class ICartDataProvider(Interface):
     
     data = Attribute(u"Cart data as json response")
 
+
 class CartDataProvider(object):
     """collective.portlet.cart item provider.
-    
-    XXX: abstract this when generalizing cart to ``collective.portlet.cart``
     """
     
     implements(ICartDataProvider)
@@ -59,6 +59,7 @@ class CartDataProvider(object):
     def _ascur(self, val):
         val = '%.2f' % val
         return val.replace('.', ',')
+
 
 class CartDataView(BrowserView):
     """JSON view for the cart.
