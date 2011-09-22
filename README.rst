@@ -2,7 +2,7 @@
 collective.portlet.cart
 =======================
 
-Shooping cart portlet for plone.
+Shopping cart portlet for plone.
 
 
 Installation
