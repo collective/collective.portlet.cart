@@ -47,6 +47,11 @@ class ICartDataProvider(Interface):
     
     show_summary = Attribute(u"Flag whether to show cart summary.")
     
+    summary_total_only = Attribute(u"Flag whether to show total sum only in "
+                                   u"summary.")
+    
+    checkout_url = Attribute(u"URL to checkout view.")
+    
     def validate_count(uid, count):
         """Validate if ordering n items of UID is allowed.
         """
@@ -69,6 +74,16 @@ class CartDataProviderBase(object):
     def show_summary(self):
         raise NotImplementedError(u"CartDataProviderBase does not implement "
                                   u"``show_summary``.")
+    
+    @property
+    def summary_total_only(self):
+        raise NotImplementedError(u"CartDataProviderBase does not implement "
+                                  u"``summary_total_only``.")
+    
+    @property
+    def checkout_url(self):
+        raise NotImplementedError(u"CartDataProviderBase does not implement "
+                                  u"``checkout_url``.")
     
     def validate_count(self, uid, count):
         raise NotImplementedError(u"CartDataProviderBase does not implement "

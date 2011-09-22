@@ -23,6 +23,14 @@ class CartView(BrowserView, DataProviderMixin):
     @property
     def show_summary(self):
         return self.data_provider.show_summary
+    
+    @property
+    def summary_total_only(self):
+        return self.data_provider.summary_total_only
+    
+    @property
+    def checkout_url(self):
+        return self.data_provider.checkout_url
 
 
 class CartDataView(BrowserView, DataProviderMixin):

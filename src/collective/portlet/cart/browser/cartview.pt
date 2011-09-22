@@ -67,6 +67,10 @@
       
       <div id="cart_summary" style="display: none;">
         <div class="cart-sum-content">
+          <tal:details condition="not:view/summary_total_only">
+            <span>Net: </span><span class="cart_net">Net</span><br />
+            <span>VAT.: </span><span class="cart_vat">VAT</span><br />
+          </tal:details>
           <strong>Summe: </strong><strong class="cart_total">Total</strong>
         </div>
     
@@ -76,7 +80,8 @@
           </div>
     
           <div  class="cart-order-button">
-            <a href="@@checkout">Bestellen</a>
+            <a href="@@checkout"
+               tal:attributes="href view/checkout_url">Bestellen</a>
           </div>
         </div> 
          

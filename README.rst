@@ -59,6 +59,18 @@ Implement data provider inheriting from
     ...     def show_summary(self):
     ...         """Flag whether to show cart summary.
     ...         """
+    ...     
+    ...     @property
+    ...     def summary_total_only(self):
+    ...         """Flag whether to show total sum only in summary.
+    ...         """
+    ...         return False
+    ...     
+    ...     @property
+    ...     def checkout_url(self):
+    ...         """URL to checkout view.
+    ...         """
+    ...         return '%s/@@checkout' % self.context.absolute_url()
 
 and register it as adapter with ZCML. The adapter is looked up for context
 and request, these attributes are available on ``context`` respective
@@ -101,6 +113,26 @@ and the "update cart" avtion.
 ::
 
     <a href="" class="update_cart_item">update cart</a>
+
+
+Javascript
+----------
+
+The cart can be customizes on client side.
+
+Flag whether to hide cart container if cart is empty::
+
+    CART_HIDE_CONTAINER_IF_EMPTY = [true|false];
+
+Maximum number of allowed articles in order::
+
+    CART_MAX_ARTICLE_COUNT = 20;
+
+Client side dislog messages::
+
+    cart.messages['article_limit_reached'] = "Article limit reached";
+    cart.messages['total_limit_reached'] = "Total limit reached";
+    cart.messages['not_a_number'] = "Input not a number";
 
 
 Contributors

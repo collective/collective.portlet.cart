@@ -12,12 +12,12 @@
 
   <browser:resource
     name="collective.portlet.cart.js"
-    file="collective.portlet.cart.js"
+    file="cart.js"
   />
 
   <browser:resource
     name="collective.portlet.cart.css"
-    file="collective.portlet.cart.css"
+    file="cart.css"
   />
   
   <browser:resource
@@ -57,6 +57,7 @@
   <browser:page
     for="*"
     name="cart"
+    class=".CartView"
     template="cartview.pt"
     permission="zope2.View"
   />

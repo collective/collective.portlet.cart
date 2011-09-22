@@ -1,8 +1,7 @@
 <div id="cart">
 
   <ul id="card_item_template" style="display: none;">
-	<li class="cart_item">
-	
+    <li class="cart_item">
       <div>
         <strong class="cart_item_title">Title</strong>
       </div>
@@ -49,8 +48,10 @@
   <div id="cart_summary" style="display: none;">
     <div tal:condition="view/show_summary">
       <p>
-        <span>Net: </span><span class="cart_net">Net</span><br />
-        <span>VAT.: </span><span class="cart_vat">VAT</span><br />
+        <tal:details condition="not:view/summary_total_only">
+          <span>Net: </span><span class="cart_net">Net</span><br />
+          <span>VAT.: </span><span class="cart_vat">VAT</span><br />
+        </tal:details>
         <strong>Total: </strong><span class="cart_total">Total</span>
       </p> 
     </div>
