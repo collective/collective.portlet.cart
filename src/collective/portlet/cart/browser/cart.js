@@ -208,9 +208,12 @@
     }
     
     Cart.prototype.extract = function(node) {
-        var parent_node = $(node).parent();
-        var uid = $('.cart_item_uid', parent_node).text();
-        var count_node = $('.cart_item_count', parent_node).get(0);
+        //var parent_node = $(node).parent();
+        //var uid = $('.cart_item_uid', parent_node).text();
+        //var count_node = $('.cart_item_count', parent_node).get(0);
+        node = $(node);
+        var uid = node.parents('.cart_item_uid').text();
+        var count_node = node.parents('.cart_item_count').get(0);
         var count;
         if (count_node.tagName.toUpperCase() == 'INPUT') {
             count = $(count_node).val();
