@@ -41,8 +41,21 @@
       <div>
         <span class="cart_item_uid" style="display: none;">12345681</span>
         <h3>Artikel 12345681</h3>
-        <input type="text" size="2" value="1" class="cart_item_count" />Stück
-        <a href="" class="add_cart_item">in den Warenkorb</a>
+        
+        <div class="field">
+          <label>Quantity:</label>
+          <input type="text" class="cart_item_count" value="1" size="2">
+        </div>
+        
+        <div class="field">
+          <label>Price:</label>
+          <span>CHF</span>
+          87.28
+        </div>
+        
+        <div class="field">
+          <a class="add_cart_item" href="">add to cart</a>
+        </div>
       </div>
       
       <hr size="1" />
