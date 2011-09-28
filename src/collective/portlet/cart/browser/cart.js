@@ -8,6 +8,13 @@
         }
         cart.init();
         cart.query();
+        
+        if (typeof(window['Faceted']) != "undefined") {
+            $(Faceted.Events).bind(Faceted.Events.AJAX_QUERY_SUCCESS,
+                                   function(e){
+                cart.bind();
+            });
+        }
     });
     
     var CART_HIDE_CONTAINER_IF_EMPTY = false;
