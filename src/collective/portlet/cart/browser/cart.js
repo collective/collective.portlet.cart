@@ -310,6 +310,7 @@
             }
         });
     }
-    var cart = new Cart();
+    
+    cart = new Cart();
 
 })(jQuery);
