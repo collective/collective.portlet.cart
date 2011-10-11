@@ -181,6 +181,10 @@
                                 bdajax.info(unescape(msg));
                             } else {
                                 cart.add(defs[0], defs[1]);
+                                var evt = $.Event('cart_modified');
+                                evt.uid = defs[0];
+                                evt.count = defs[1];
+                                $('*').trigger(evt);
                             }
                         }
                     });
@@ -205,6 +209,10 @@
                                 bdajax.info(unescape(msg));
                             } else {
                                 cart.set(defs[0], defs[1]);
+                                var evt = $.Event('cart_modified');
+                                evt.uid = defs[0];
+                                evt.count = defs[1];
+                                $('*').trigger(evt);
                             }
                         }
                     });
