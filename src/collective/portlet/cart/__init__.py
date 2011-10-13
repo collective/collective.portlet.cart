@@ -52,6 +52,8 @@ class ICartDataProvider(Interface):
     
     checkout_url = Attribute(u"URL to checkout view.")
     
+    cart_url = Attribute(u"URL to cart view.")
+    
     def validate_count(uid, count):
         """Validate if ordering n items of UID is allowed.
         """
@@ -84,6 +86,11 @@ class CartDataProviderBase(object):
     def checkout_url(self):
         raise NotImplementedError(u"CartDataProviderBase does not implement "
                                   u"``checkout_url``.")
+    
+    @property
+    def cart_url(self):
+        raise NotImplementedError(u"CartDataProviderBase does not implement "
+                                  u"``cart_url``.")
     
     def validate_count(self, uid, count):
         raise NotImplementedError(u"CartDataProviderBase does not implement "

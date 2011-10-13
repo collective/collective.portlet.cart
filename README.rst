@@ -71,6 +71,12 @@ Implement data provider inheriting from
     ...         """URL to checkout view.
     ...         """
     ...         return '%s/@@checkout' % self.context.absolute_url()
+    ...     
+    ...     @property
+    ...     def cart_url(self):
+    ...         """URL to cart view.
+    ...         """
+    ...         return '%s/@@cart' % self.context.absolute_url()
 
 and register it as adapter with ZCML. The adapter is looked up for context
 and request, these attributes are available on ``context`` respective

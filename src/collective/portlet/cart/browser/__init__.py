@@ -77,6 +77,10 @@ class CartRenderer(base.Renderer, DataProviderMixin):
     @property
     def disable_max_article_count(self):
         return self.data_provider.disable_max_article
+    
+    @property
+    def cart_url(self):
+        return self.data_provider.cart_url
 
 
 class CartAddForm(base.NullAddForm):
