@@ -89,8 +89,7 @@ class CartDataProviderBase(object):
     
     @property
     def cart_url(self):
-        raise NotImplementedError(u"CartDataProviderBase does not implement "
-                                  u"``cart_url``.")
+        return '%s/@@cart' % self.context.absolute_url()
     
     def validate_count(self, uid, count):
         raise NotImplementedError(u"CartDataProviderBase does not implement "
