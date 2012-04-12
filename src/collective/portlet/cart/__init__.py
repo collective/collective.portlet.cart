@@ -8,6 +8,13 @@ from zope.component import adapts
 from zope.publisher.interfaces.browser import IBrowserRequest
 
 
+def ascur(val):
+    """Convert float value to currency string.
+    """
+    val = '%.2f' % val
+    return val.replace('.', ',')
+
+
 def readcookie(request):
     """Read, unescape and return the cart cookie.
     """
@@ -125,7 +132,7 @@ class CartDataProviderBase(object):
             'cart_item_uid': uid,
             'cart_item_title': title,
             'cart_item_count': count,
-            'cart_item_price': self._ascur(price),
+            'cart_item_price': ascur(price),
             'cart_item_location:href': url,
         }
     
@@ -141,12 +148,8 @@ class CartDataProviderBase(object):
             vat = self.vat(items)
             cart_items = self.cart_items(items)
             ret['cart_items'] = cart_items
-            ret['cart_summary']['cart_net'] = self._ascur(net)
-            ret['cart_summary']['cart_vat'] = self._ascur(vat)
-            ret['cart_summary']['cart_total'] = self._ascur(net + vat)
+            ret['cart_summary']['cart_net'] = ascur(net)
+            ret['cart_summary']['cart_vat'] = ascur(vat)
+            ret['cart_summary']['cart_total'] = ascur(net + vat)
             ret['cart_summary']['cart_total_raw'] = net + vat
         return ret
-    
-    def _ascur(self, val):
-        val = '%.2f' % val
-        return val.replace('.', ',')
