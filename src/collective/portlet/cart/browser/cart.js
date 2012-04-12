@@ -17,11 +17,12 @@
         }
     });
     
-    var CART_HIDE_CONTAINER_IF_EMPTY = false;
-    var CART_CONTAINER_IDENTIFYER = '#portlet-cart';
-    var CART_MAX_ARTICLE_COUNT = 5;
+    CART_HIDE_CONTAINER_IF_EMPTY = false;
+    CART_CONTAINER_IDENTIFYER = '#portlet-cart';
+    CART_MAX_ARTICLE_COUNT = 5;
     
-    function Cart() {}
+    function Cart() {
+    }
     
     Cart.prototype.messages = {
         article_limit_reached: "Die gewünschte Bestellmenge übersteigt die " +
@@ -96,6 +97,8 @@
         if (data['cart_items'].length == 0) {
             if (!CART_HIDE_CONTAINER_IF_EMPTY) {
                 $(CART_CONTAINER_IDENTIFYER).css('display', 'block');
+            } else {
+                $(CART_CONTAINER_IDENTIFYER).css('display', 'none');
             }
             $('#cart_items', this.cart_node).css('display', 'none');
             $('#cart_no_items', this.cart_node).css('display', 'block');
