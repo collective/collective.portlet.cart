@@ -145,7 +145,9 @@ Contributors
 ------------
 
 - Robert Niederreiter
+
 - Peter Holzer
+
 - Sven Plage
 
 

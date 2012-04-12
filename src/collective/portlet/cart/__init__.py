@@ -1,4 +1,4 @@
-import urllib
+import urllib2
 from zope.interface import (
     Interface,
     Attribute,
@@ -11,7 +11,7 @@ from zope.publisher.interfaces.browser import IBrowserRequest
 def readcookie(request):
     """Read, unescape and return the cart cookie.
     """
-    return urllib.unquote(request.cookies.get('cart', ''))
+    return urllib2.unquote(request.cookies.get('cart', ''))
 
 
 def deletecookie(request):
@@ -29,7 +29,7 @@ def extractitems(items):
     if not items:
         return []
     ret = list()
-    items = items.split(',')
+    items = urllib2.unquote(items).split(',')
     for item in items:
         if not item:
             continue
