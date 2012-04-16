@@ -1,25 +1,9 @@
-#cartWrapper {
-    color: red;
-    background-color: red;		
+/* warenkorb css sollt nacha nach collective cart gehn?*/
+.cart_item_title {
+    font-size: 1.3em;  
 }
 
-#cart {
-    color: red;
-    background-color: red;
+.cart_item_styling{
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
 }
-
-dl.portlet-cart {
-	color: red;
-    background-color: red;
-}
-
-#portlet-cart dl {
-    color: red;
-    background-color: red;
-}
-
-.portlet portletCart{
-	color: red;
-	background-color: red;
-}
-
