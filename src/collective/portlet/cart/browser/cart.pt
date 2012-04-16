@@ -5,7 +5,7 @@
       <div>
         <strong class="cart_item_title">Title</strong>
       </div>
-      <div>
+      <div class="cart_item_styling">
         <span>Menge</span>
         <span>
           <span class="cart_item_uid" style="display: none;">uid</span>
@@ -13,17 +13,19 @@
           <a href=""
              class="update_cart_item"
              title="&auml;ndern">
-            <img src="++resource++cart_item_refresh.gif"
+            <img src="++resource++collective.portlet.cart.images/cart_put.png"
                  alt="&auml;ndern" />
           </a>
         </span>
+        <span>&nbsp;
+        </span>       
         <span>
           <span class="cart_item_uid" style="display: none;">uid</span>
           <span class="cart_item_count" style="display: none;">0</span>
           <a href=""
              class="update_cart_item"
              title="entfernen">
-            <img src="++resource++cart_item_remove.gif"
+            <img src="++resource++collective.portlet.cart.images/cart_delete.png"
                  alt="entfernen" />
           </a>
         </span>

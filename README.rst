@@ -150,6 +150,8 @@ Contributors
 
 - Sven Plage
 
+- Icons by famfamfam
+
 
 History
 -------

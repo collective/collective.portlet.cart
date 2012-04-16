@@ -20,14 +20,9 @@
     file="cart.css"
   />
   
-  <browser:resource
-    name="cart_item_refresh.gif"
-    file="images/cart_item_refresh.gif"
-  />
-  
-  <browser:resource
-    name="cart_item_remove.gif"
-    file="images/cart_item_remove.gif"
+  <browser:resourceDirectory
+    name="collective.portlet.cart.images"
+    directory="images"
   />
   
   <browser:page

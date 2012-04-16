@@ -1,0 +1,25 @@
+#cartWrapper {
+    color: red;
+    background-color: red;		
+}
+
+#cart {
+    color: red;
+    background-color: red;
+}
+
+dl.portlet-cart {
+	color: red;
+    background-color: red;
+}
+
+#portlet-cart dl {
+    color: red;
+    background-color: red;
+}
+
+.portlet portletCart{
+	color: red;
+	background-color: red;
+}
+
