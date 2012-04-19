@@ -1,4 +1,4 @@
-<tal:block i18n:domain="plone">
+<tal:block i18n:domain="collective.portlet.cart">
 <div id="cartWrapper">
   <span tal:condition="view/disable_max_article_count"
         style="display:none;"
@@ -10,10 +10,13 @@
           <span class="portletTopLeft"></span>
           <a href="@@cart" 
              class="tile"
-             title="Zum Warenkorb"
+             title="Details Checkout"
              tal:attributes="href view/cart_url"
-             tal:condition="not:view/disable_max_article_count">Warenkorb</a>
-          <span tal:condition="view/disable_max_article_count">Warenkorb</span>
+             tal:condition="not:view/disable_max_article_count"
+             i18n:translate="cart">Cart</a>
+          <span tal:condition="view/disable_max_article_count"
+                i18n:translate="cart"
+                i18n:attributes="title details_checkout">Cart</span>
           <span class="portletTopRight"></span>
       </dt>
       <dd class="portletItem lastItem">
@@ -22,8 +25,9 @@
           <span class="portletBottomRight"></span>
       </dd>
       <dd class="cart-button-cart">
-        <a href="@@cart"
-           tal:attributes="href view/cart_url">&raquo; Zum Warenkorb</a>
+        &raquo; <a href="@@cart"
+           tal:attributes="href view/cart_url"
+           i18n:translate="details_checkout">Details/ Checkout</a>
       </dd>
   </dl>
   
