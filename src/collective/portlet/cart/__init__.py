@@ -8,11 +8,16 @@ from zope.component import adapts
 from zope.publisher.interfaces.browser import IBrowserRequest
 
 
-def ascur(val):
+def ascur(val, comma=False):
     """Convert float value to currency string.
+    
+    comma:
+         True for ```,``` instead of ```.```.
     """
     val = '%.2f' % val
-    return val.replace('.', ',')
+    if comma:
+        return val.replace('.', ',')
+    return val
 
 
 def readcookie(request):
