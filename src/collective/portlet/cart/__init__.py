@@ -46,7 +46,12 @@ def extractitems(items):
         if not item:
             continue
         item = item.split(':')
-        ret.append((item[0], int(item[1])))
+        try:
+            ret.append((item[0], int(item[1])))
+        except ValueError:
+            # item[1] may be a 'NaN'
+            #ret.append((item[0], 0))
+            pass
     return ret
 
 
