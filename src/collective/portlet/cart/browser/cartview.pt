@@ -37,7 +37,7 @@
                alt="&auml;ndern"
                title="&auml;ndern">
               <img src="++resource++cart_item_refresh.gif"
-                   alt="&auml;ndern" />
+                   alt="change" />
             </a>
           </span>
           <span>
@@ -45,7 +45,7 @@
             <span class="cart_item_count" style="display: none;">0</span>
             <a href=""
                class="update_cart_item"
-               alt="entfernen"
+               alt="remove"
                title="entfernen">
               <img src="++resource++cart_item_remove.gif"
                    alt="entfernen" />

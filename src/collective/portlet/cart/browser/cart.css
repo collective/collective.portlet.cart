@@ -7,3 +7,21 @@
     margin-top: 0.3em;
     margin-bottom: 0.3em;
 }
+dd.cart-button-cart {	
+    padding-left: 1em;
+} 
+dd.cart-button-cart a:link,
+dd.cart-button-cart a:active,
+dd.cart-button-cart a:hover,
+dd.cart-button-cart a:visited
+ {
+    background: none repeat scroll 0 0 #31B404;
+    padding-top: 3px;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    color: white;
+    cursor: pointer;
+    display: block;
+    height: 1.7em;
+    text-align: center;
+    width: 10em;
+}

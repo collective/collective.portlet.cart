@@ -24,10 +24,11 @@
           <span class="portletBottomLeft"></span>
           <span class="portletBottomRight"></span>
       </dd>
-      <dd class="cart-button-cart">
-        &raquo; <a href="@@cart"
+      <dd class="cart-button-cart">      
+        <a href="@@cart"
            tal:attributes="href view/cart_url"
-           i18n:translate="details_checkout">Details/ Checkout</a>
+           i18n:translate="details_checkout"><img src="++resource++collective.portlet.cart.images/cart_go.png" 
+             alt="Checkout/ Details" />Details/ Checkout</a>
       </dd>
   </dl>
   
