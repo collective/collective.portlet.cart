@@ -30,8 +30,6 @@ setup(name='collective.portlet.cart',
       extras_require = dict(
       ),
       entry_points="""
-      # -*- Entry points: -*-
-
       [z3c.autoinclude.plugin]
       target = plone
       """,
